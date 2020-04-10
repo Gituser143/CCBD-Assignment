@@ -5,17 +5,20 @@ import math
 import csv
 import copy
 
-images_folder_path = os.path.abspath(os.path.join( 'images'))
-generated_folder_path = os.path.abspath(os.path.join('Generated'))
+images_folder_path = os.path.abspath(os.path.join('images')) + '/'
+generated_folder_path = os.path.abspath(os.path.join('generated')) + '/'
 
-img = cv2.imread('/home/skete/CCBD-Assignment/images/560001.png')
+print(images_folder_path)
+images = os.listdir(images_folder_path)
 
-y=180
-x=650
-w=1030
-h=690
-crop_img = img[y:y+h, x:x+w]
-cv2.imshow("cropped", crop_img)
-#cv2.waitKey(0)
-cv2.imwrite('/home/skete/CCBD-Assignment/generated/560001.png',crop_img)
+#Dimensions
+y = 180
+x = 650
+w = 1030
+h = 690
 
+
+for image in images:
+    img = cv2.imread(images_folder_path + image)
+    crop_img = img[y:y+h, x:x+w]
+    cv2.imwrite(generated_folder_path + image, crop_img)
