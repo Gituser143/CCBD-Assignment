@@ -7,8 +7,6 @@ import copy
 
 images_folder_path = os.path.abspath(os.path.join('images')) + '/'
 generated_folder_path = os.path.abspath(os.path.join('generated')) + '/'
-
-print(images_folder_path)
 images = os.listdir(images_folder_path)
 
 #Dimensions
@@ -16,7 +14,6 @@ y = 180
 x = 650
 w = 1030
 h = 690
-
 
 for image in images:
     img = cv2.imread(images_folder_path + image)
