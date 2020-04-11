@@ -17,8 +17,8 @@ if os.path.exists("data.txt"):
 else:
   print("The file 'data.txt' does not exist")
 
-x = 1029
-y = 690
+x = 690
+y = 1029
 
 location = [["NW", "N", "NE"],["W", "C", "E"],["SW", "S", "SE"]]
 
@@ -31,7 +31,7 @@ with open("data.txt", "a") as file_object:
         #cv2.imwrite(generated_folder_path + image + '.png', maskg)
         for i in range(0,3):
             for j in range(0,3):
-
+      
                 sector = img[int(x*j/3):int(x*(j+1)/3), int(y*i/3):int(y*(i+1)/3)]
                 hsv = cv2.cvtColor(sector, cv2.COLOR_BGR2HSV)
                 maskg = cv2.inRange(hsv, lower_green, upper_green)
@@ -45,5 +45,8 @@ with open("data.txt", "a") as file_object:
                             green_pixels += 1
 
                 perc = round( (green_pixels / total_pixels * 100) , 2)
+                cv2.imwrite('sector-images/' + image + "-" + location[i][j] + '.png' ,sector)
+                cv2.imwrite('sector-masks/' + image + "-" + location[i][j] + '.png',maskg )
+
                 file_object.write(image + "-" + location[i][j] + "," + str(perc) + "\n")
                 print(image + "-" + location[i][j] + "," + str(perc) + "\n")
