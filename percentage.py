@@ -7,7 +7,7 @@ import numpy as np
 images_folder_path = os.path.abspath(os.path.join('generated')) + '/'
 generated_folder_path = os.path.abspath(os.path.join('color')) + '/'
 images_list = os.listdir(images_folder_path)
-images = [i.split('.')[0] for i in images]
+images = [i.split('.')[0] for i in images_list]
 
 lower_green = np.array([40, 0, 0])
 upper_green = np.array([100, 255, 255])
@@ -32,6 +32,7 @@ with open("info.txt", "a") as file_object:
         l = len(num_pixels)
         g = len(green_pixel)
         perc = round( (g / l * 100) , 2)
+        print(image + "," + str(perc))
         file_object.write(image + "," + str(perc))
         file_object.write("\n")
 
