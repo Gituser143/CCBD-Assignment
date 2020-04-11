@@ -9,7 +9,6 @@ images_folder_path = os.path.abspath(os.path.join('images')) + '/'
 generated_folder_path = os.path.abspath(os.path.join('generated')) + '/'
 images = os.listdir(images_folder_path)
 
-#Dimensions
 y = 180
 x = 650
 w = 1030
