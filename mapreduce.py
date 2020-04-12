@@ -13,7 +13,7 @@ class checkForGreen(MRJob):
 		percentage = float(percentage)
 		if(percentage > 60):
 			p = round(percentage, 1)
-			yield pincode, percentage
+			yield pincode, p
 
 	def reducer_get_green(self, key, values):
 		yield key, sum(values)
