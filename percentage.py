@@ -20,7 +20,7 @@ else:
 x = 690
 y = 1029
 
-location = [["NW", "N", "NE"],["W", "C", "E"],["SW", "S", "SE"]]
+location = [["NW", "W", "SW"],["N", "C", "S"],["NE", "E", "SE"]]
 
 with open("data.txt", "a") as file_object:
 
@@ -31,7 +31,7 @@ with open("data.txt", "a") as file_object:
         #cv2.imwrite(generated_folder_path + image + '.png', maskg)
         for i in range(0,3):
             for j in range(0,3):
-      
+
                 sector = img[int(x*j/3):int(x*(j+1)/3), int(y*i/3):int(y*(i+1)/3)]
                 hsv = cv2.cvtColor(sector, cv2.COLOR_BGR2HSV)
                 maskg = cv2.inRange(hsv, lower_green, upper_green)
