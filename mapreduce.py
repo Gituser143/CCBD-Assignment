@@ -9,7 +9,7 @@ class checkForGreen(MRJob):
 	def mapper_check_green(self, _, line):
 		(pincode, percentage) = line.split(',')
 		percentage = float(percentage)
-		if(percentage > 75):
+		if(percentage > 60):
 			yield pincode, percentage
 
 	def reducer_get_green(self, key, values):
