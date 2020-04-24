@@ -14,7 +14,6 @@ Directory Structure
 
 * ```masks/``` contains masks for each image in ```generated/```.
 
-----
 
 Files
 -----
@@ -33,7 +32,6 @@ Files
 
 * ```output.txt``` contains output of mapreduce program.
 
-----
 
 How to execute?
 ---------------
@@ -42,7 +40,6 @@ How to execute?
 
 * Execute ```mapreduce.py``` from a hadoop cluster with a hadoop streaming file. Use ```data.txt``` as input.
 
-----
 
 Dependencies
 ------------
@@ -56,5 +53,3 @@ Dependencies
   * copy
 
 * Hadoop cluster with appropriate Hadoop-Streaming.jar and MRJob installed.
-
-----
