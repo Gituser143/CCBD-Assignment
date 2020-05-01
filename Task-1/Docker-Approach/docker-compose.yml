@@ -7,7 +7,7 @@ services:
     volumes:
       - './Server/nginx.conf:/etc/nginx/nginx.conf'
     ports:
-      - "80:80"
+      - "8000:80"
 
   proxy1:
     build:
